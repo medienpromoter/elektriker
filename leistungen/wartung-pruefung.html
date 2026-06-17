@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,7 @@
   <main>
 
     <section class="leistung-hero" style="background-image:linear-gradient(rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.48) 100%),url('../images/elektroinstallation-hero/neuinstallation5.jpg');background-size:cover;background-position:center;">
-      <div class="container">
+      <div class="container reveal fade-up distance-sm" data-duration="700" data-threshold="0.1">
         <span class="section-label">VDE 0105 &middot; DGUV V3 &middot; Digitales Protokoll &middot; [Stadt]</span>
         <h1>Wartung &amp; Prüfung in [Stadt]</h1>
         <p>Regelmäßige Prüfungen sind gesetzlich vorgeschrieben und schützen vor Haftungsrisiken. Wir prüfen, dokumentieren und kündigen uns rechtzeitig vor dem nächsten Termin an – kein Aufwand für Sie.</p>
@@ -134,10 +135,10 @@
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="wartungsvertrag-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/elektroinstallation-hero/neuinstallation1.jpg" alt="Elektriker bei Prüfarbeiten" loading="lazy" width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Wartungsvertrag</span>
             <h2 id="wartungsvertrag-titel" class="section-titel">Einmal beauftragen – wir kümmern uns</h2>
             <p>Mit einem Wartungsvertrag müssen Sie sich um keine Fristen mehr kümmern. Wir kündigen uns rechtzeitig vor dem Prüftermin an, führen die Prüfung durch und stellen das digitale Protokoll aus.</p>
@@ -158,7 +159,7 @@
         <div class="leistung-hinweis">
           <strong>Haftungsrisiko:</strong> Ohne aktuellen Prüfnachweis kann die Versicherung im Schadensfall leistungsfrei werden. Das digitale Protokoll, das wir nach jeder Prüfung ausstellen, ist Ihr Nachweis gegenüber Versicherung und Berufsgenossenschaft.
         </div>
-        <div class="leistung-cta">
+        <div class="leistung-cta reveal fade-up" data-duration="600" data-threshold="0.3">
           <h2 id="pruef-cta-titel">Prüftermin anfragen</h2>
           <p>Einmalige Prüfung oder Wartungsvertrag – wir erstellen Ihnen ein Angebot.</p>
           <div class="btn-gruppe">
@@ -182,5 +183,6 @@
   </footer>
   <script>document.getElementById('footer-jahr').textContent=new Date().getFullYear();</script>
   <script src="../js/nav.js"></script>
+  <script src="../js/animate.js" defer></script>
 </body>
 </html>

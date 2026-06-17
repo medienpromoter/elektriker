@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,7 @@
   <main>
 
     <section class="leistung-hero" style="background-image:linear-gradient(rgba(0,0,0,0.68) 0%,rgba(0,0,0,0.45) 100%),url('../images/photovoltaik/photovoltaik-hero.jpg');background-size:cover;background-position:center;">
-      <div class="container">
+      <div class="container reveal fade-up distance-sm" data-duration="700" data-threshold="0.1">
         <span class="section-label">0% MwSt. &middot; KfW-Förderung &middot; Netzanmeldung inklusive</span>
         <h1>Photovoltaik &amp; Energiespeicher in [Stadt]</h1>
         <p>Eigenen Strom produzieren, Stromrechnung dauerhaft senken. Wir übernehmen Planung, Installation, Netzanmeldung und Förderantrag – Sie müssen sich um nichts kümmern.</p>
@@ -51,10 +52,10 @@
     <section class="abschnitt" aria-labelledby="dach-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/photovoltaik-dachfaechenanalyse/photovoltaik-dachfaechenanalyse1.jpg" alt="Dachflächenanalyse für PV-Anlage" loading="lazy" width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Planung</span>
             <h2 id="dach-titel" class="section-titel">Dachanalyse &amp; optimale Auslegung</h2>
             <p>Wir analysieren Ihre Dachfläche nach Ausrichtung, Neigung und Verschattung – und legen die Anlage optimal für Ihren Jahresstromverbrauch aus. Mit realistischer Amortisationszeit: typisch 8–14 Jahre.</p>
@@ -74,7 +75,7 @@
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="wechselrichter-titel">
       <div class="container">
         <div class="split split--reverse">
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Wechselrichter</span>
             <h2 id="wechselrichter-titel" class="section-titel">Führende Wechselrichter-Systeme</h2>
             <p>Wir arbeiten mit bewährten Systemen von SMA, Fronius und Kostal – je nach Anlagengröße und Anforderung empfehlen wir String- oder Mikrowechselrichter.</p>
@@ -85,7 +86,7 @@
               <li>Netzüberwachung und Ertragsmonitoring inklusive</li>
             </ul>
           </div>
-          <div class="split-bild" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
             <img src="../images/wechseltrichter/wechseltrichter-sma.webp" alt="SMA Wechselrichter" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;padding:0.5rem;border-radius:4px;">
             <img src="../images/wechseltrichter/wechseltrichter-fronius.webp" alt="Fronius Wechselrichter" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;padding:0.5rem;border-radius:4px;">
             <img src="../images/wechseltrichter/wechselrichter-kostal.webp" alt="Kostal Wechselrichter" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;padding:0.5rem;border-radius:4px;">
@@ -99,13 +100,13 @@
     <section class="abschnitt" aria-labelledby="speicher-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
             <img src="../images/batteriespeicher/batteriespeicher-byd.webp" alt="BYD Batteriespeicher" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;padding:0.5rem;border-radius:4px;">
             <img src="../images/batteriespeicher/batteriespeicher-huawei.png" alt="Huawei Batteriespeicher" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;padding:0.5rem;border-radius:4px;">
             <img src="../images/batteriespeicher/batteriespeicher-sonnen.png" alt="Sonnen Batteriespeicher" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;padding:0.5rem;border-radius:4px;">
             <img src="../images/photovoltaik/photovoltaik-hero4.jpg" alt="PV und Speicher kombiniert" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Batteriespeicher</span>
             <h2 id="speicher-titel" class="section-titel">Eigenverbrauch maximieren – Speicher lohnt sich</h2>
             <p>Ein Batteriespeicher steigert Ihren Eigenverbrauch auf bis zu 80%. Faustregel: 1 kWh Speicher je 1.000 kWh Jahresverbrauch. Wir empfehlen bewährte LFP-Systeme.</p>
@@ -124,7 +125,7 @@
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="pv-kombi-titel">
       <div class="container">
         <div class="split split--reverse">
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">PV + Wallbox + Speicher</span>
             <h2 id="pv-kombi-titel" class="section-titel">Die perfekte Kombination</h2>
             <p>Solarstrom direkt ins Auto laden – mit Überschussladen speisen Sie Sonnenstrom statt ins Netz für wenig Vergütung in Ihr E-Auto. Wir planen und installieren das Gesamtsystem.</p>
@@ -136,7 +137,7 @@
             </ul>
             <a href="../kontakt.html" class="btn btn-primary">Gesamtsystem anfragen</a>
           </div>
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/kombination-pv-wallbox-speicher/kombination-pv-wallbox-speicher-fronius2.jpg" alt="PV-Anlage, Speicher und Wallbox kombiniert" loading="lazy" width="600" height="450">
           </div>
         </div>
@@ -149,7 +150,7 @@
         <div class="leistung-hinweis">
           <strong>Wichtig:</strong> Der Förderantrag muss VOR Auftragsvergabe gestellt werden. Wer das nicht weiß, verliert bares Geld. Wir begleiten Sie durch den Antragsprozess.
         </div>
-        <div class="leistung-cta">
+        <div class="leistung-cta reveal fade-up" data-duration="600" data-threshold="0.3">
           <h2 id="pv-cta-titel">Kostenloses Solardach-Angebot anfordern</h2>
           <p>Vor-Ort-Analyse, Ertragsprognose, Fördercheck – alles kostenlos und unverbindlich.</p>
           <div class="btn-gruppe">
@@ -196,5 +197,6 @@
     hb.addEventListener('click', function() { const o = this.getAttribute('aria-expanded')==='true'; this.setAttribute('aria-expanded',String(!o)); mm.classList.toggle('is-open',!o); });
   </script>
   <script src="../js/nav.js"></script>
+  <script src="../js/animate.js" defer></script>
 </body>
 </html>

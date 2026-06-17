@@ -932,3 +932,40 @@ a   { color: inherit; text-decoration: none; }
   .site-header, .hero-badge, .hamburger, .cta-banner, .partner-bar { display: none; }
   body { font-size: 12pt; color: #000; }
 }
+
+/* ============================================================
+   SCROLL-ANIMATIONEN
+   ============================================================ */
+
+/* Fallback: kein JS → alles sofort sichtbar */
+html:not(.js-ready) .reveal { opacity: 1 !important; transform: none !important; }
+
+.reveal {
+  will-change: opacity, transform;
+  transition-property: opacity, transform;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ausgangszustände */
+.fade-up    { opacity: 0; transform: translateY(32px); }
+.fade-down  { opacity: 0; transform: translateY(-32px); }
+.fade-left  { opacity: 0; transform: translateX(-40px); }
+.fade-right { opacity: 0; transform: translateX(40px); }
+.fade-in    { opacity: 0; transform: none; }
+.fade-scale { opacity: 0; transform: scale(0.95); }
+
+/* Kleine Distanz-Variante */
+.distance-sm.fade-up   { transform: translateY(16px); }
+.distance-sm.fade-down { transform: translateY(-16px); }
+
+/* Sichtbar-Zustand (gesetzt per JS) */
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced-motion: keine Bewegung */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
+}

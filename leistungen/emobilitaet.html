@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,7 @@
   <main>
 
     <section class="leistung-hero" style="background-image:linear-gradient(rgba(0,0,0,0.70) 0%,rgba(0,0,0,0.45) 100%),url('../images/wallbox/wallbox.png');background-size:cover;background-position:center;">
-      <div class="container">
+      <div class="container reveal fade-up distance-sm" data-duration="700" data-threshold="0.1">
         <span class="section-label">Netzanmeldung inklusive &middot; KfW 442 &middot; [Stadt]</span>
         <h1>E-Mobilität &amp; Ladeinfrastruktur in [Stadt]</h1>
         <p>Wallbox zu Hause, Ladeinfrastruktur für Firmen und Flotten – wir installieren normgerecht, melden beim Netzbetreiber an und kombinieren auf Wunsch mit Ihrer PV-Anlage.</p>
@@ -68,10 +69,10 @@
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="wallbox-haus-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/ladepunkt-firmenparkplaetze/ladepunkt-firmenparkplaetze-mennekes.jpg" alt="Wallbox Installation am Einfamilienhaus" loading="lazy" width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Einfamilienhaus</span>
             <h2 id="wallbox-haus-titel" class="section-titel">Wallbox für zu Hause</h2>
             <p>3,7 kW lädt ein E-Auto über Nacht. 11 kW dreiphasig in 4–6 Stunden. 22 kW nur sinnvoll, wenn Fahrzeug und Netzanschluss das erlauben. Wir beraten ehrlich – ohne Overselling.</p>
@@ -91,7 +92,7 @@
     <section class="abschnitt" aria-labelledby="wallbox-gewerbe-titel">
       <div class="container">
         <div class="split split--reverse">
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Gewerbe &amp; Flotten</span>
             <h2 id="wallbox-gewerbe-titel" class="section-titel">Ladeinfrastruktur für Firmenparkplätze</h2>
             <p>Mehrere Ladepunkte, Lastmanagement, MID-geeichte Abrechnung für Mitarbeiter – wir planen und installieren skalierbare Ladeinfrastruktur für Unternehmen.</p>
@@ -103,7 +104,7 @@
             </ul>
             <a href="../kontakt.html" class="btn btn-primary">Angebot für Ladeinfrastruktur</a>
           </div>
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/ladepunkt-firmenparkplaetze/ladepunkt-firmenparkplaetze-keba.webp" alt="Ladeinfrastruktur Firmenparkplatz – KEBA" loading="lazy" width="600" height="450">
           </div>
         </div>
@@ -114,10 +115,10 @@
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="pv-wallbox-kombi-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/kombination-pv-wallbox-speicher/kombination-pv-wallbox-speicher-sma1.jpg" alt="PV und Wallbox kombiniert" loading="lazy" width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">PV + Wallbox</span>
             <h2 id="pv-wallbox-kombi-titel" class="section-titel">Sonne direkt ins Auto laden</h2>
             <p>Mit PV-optimiertem Laden speisen Sie Sonnenüberschuss direkt ins Fahrzeug – statt für wenig Geld ins Netz einzuspeisen. Wir planen das Gesamtsystem aus einer Hand.</p>
@@ -138,7 +139,7 @@
         <div class="leistung-hinweis">
           <strong>Wichtig:</strong> Wallboxen ab 12 kW müssen beim Netzbetreiber angemeldet werden. Das erledigen wir – nicht jeder Elektriker ist dazu berechtigt.
         </div>
-        <div class="leistung-cta">
+        <div class="leistung-cta reveal fade-up" data-duration="600" data-threshold="0.3">
           <h2 id="wallbox-cta-titel">Wallbox-Termin anfragen</h2>
           <p>Wir beraten vor Ort und erstellen ein Angebot inkl. Fördercheck.</p>
           <div class="btn-gruppe">
@@ -164,5 +165,6 @@
   </footer>
   <script>document.getElementById('footer-jahr').textContent=new Date().getFullYear();</script>
   <script src="../js/nav.js"></script>
+  <script src="../js/animate.js" defer></script>
 </body>
 </html>

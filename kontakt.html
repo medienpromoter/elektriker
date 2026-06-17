@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -180,7 +181,7 @@
 
     <!-- HERO -->
     <section class="leistung-hero" style="background-image:linear-gradient(rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.50) 100%),url('images/elektroinstallation-hero/elektroinstallation-hero.jpg');background-size:cover;background-position:center;">
-      <div class="container">
+      <div class="container reveal fade-up distance-sm" data-duration="700" data-threshold="0.1">
         <span class="section-label">Meisterbetrieb &middot; [Stadt] &amp; Umgebung</span>
         <h1>Kontakt &amp; Anfrage</h1>
         <p>Planen Sie ein Projekt oder haben Sie eine Frage? Nutzen Sie das Formular – wir melden uns innerhalb eines Werktags. Bei Notfällen bitte direkt anrufen.</p>
@@ -203,7 +204,7 @@
         <div class="kontakt-grid">
 
           <!-- Formular -->
-          <div class="kontakt-formular">
+          <div class="kontakt-formular reveal fade-in" data-duration="500" data-threshold="0.2">
             <span class="section-label">Projektanfrage</span>
             <h2 class="section-titel" style="margin-bottom:1.75rem;">Anfrage für geplante Projekte</h2>
 
@@ -259,7 +260,7 @@
           </div>
 
           <!-- Sidebar -->
-          <aside class="kontakt-sidebar">
+          <aside class="kontakt-sidebar reveal fade-up" data-duration="600" data-delay="100" data-threshold="0.2">
 
             <div class="sidebar-karte">
               <h3>Adresse</h3>
@@ -310,5 +311,6 @@
   </footer>
   <script>document.getElementById('footer-jahr').textContent=new Date().getFullYear();</script>
   <script src="js/nav.js"></script>
+  <script src="js/animate.js" defer></script>
 </body>
 </html>

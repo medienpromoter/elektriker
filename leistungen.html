@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,7 @@
 
     <!-- HERO -->
     <section class="leistung-hero" style="background-image:linear-gradient(rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.50) 100%),url('images/elektroinstallation-hero/elektroinstallation-hero.jpg');background-size:cover;background-position:center;">
-      <div class="container">
+      <div class="container reveal fade-up distance-sm" data-duration="700" data-threshold="0.1">
         <span class="section-label">Meisterbetrieb &middot; VDE &middot; [Stadt] &amp; Umgebung</span>
         <h1>Unsere Leistungen in <span style="color:var(--rot);">[Stadt]</span></h1>
         <p>Als konzessionierter Meisterbetrieb bieten wir das komplette Spektrum der Elektrotechnik – von der klassischen Hausinstallation über PV-Anlagen und Wallboxen bis hin zu Smart Home und Sicherheitstechnik.</p>
@@ -44,7 +45,7 @@
         <div class="leistungen-uebersicht">
 
           <!-- 1 Elektroinstallation -->
-          <a href="leistungen/elektroinstallation.html" class="leistung-karte">
+          <a href="leistungen/elektroinstallation.html" class="leistung-karte reveal fade-up" data-duration="500" data-delay="0" data-threshold="0.15">
             <div class="karte-bild">
               <img src="images/neubauinstallation/neuinstallation2.jpg" alt="Elektroinstallation" loading="lazy">
               <div class="karte-overlay"></div>
@@ -58,7 +59,7 @@
           </a>
 
           <!-- 2 Photovoltaik -->
-          <a href="leistungen/photovoltaik.html" class="leistung-karte">
+          <a href="leistungen/photovoltaik.html" class="leistung-karte reveal fade-up" data-duration="500" data-delay="80" data-threshold="0.15">
             <div class="karte-bild">
               <img src="images/photovoltaik/photovoltaik-hero.jpg" alt="Photovoltaik" loading="lazy">
               <div class="karte-overlay"></div>
@@ -72,7 +73,7 @@
           </a>
 
           <!-- 3 E-Mobilität -->
-          <a href="leistungen/emobilitaet.html" class="leistung-karte">
+          <a href="leistungen/emobilitaet.html" class="leistung-karte reveal fade-up" data-duration="500" data-delay="160" data-threshold="0.15">
             <div class="karte-bild">
               <img src="images/wallbox/wallbox-abl.jpg" alt="Wallbox" loading="lazy">
               <div class="karte-overlay"></div>
@@ -86,7 +87,7 @@
           </a>
 
           <!-- 4 Smart Home -->
-          <a href="leistungen/smarthome.html" class="leistung-karte">
+          <a href="leistungen/smarthome.html" class="leistung-karte reveal fade-up" data-duration="500" data-delay="240" data-threshold="0.15">
             <div class="karte-bild">
               <img src="images/intelligente-lichtsteuerung/intelligente-lichtsteuerung-gira1.jpg" alt="Smart Home" loading="lazy">
               <div class="karte-overlay"></div>
@@ -100,7 +101,7 @@
           </a>
 
           <!-- 5 Sicherheitstechnik -->
-          <a href="leistungen/sicherheitstechnik.html" class="leistung-karte">
+          <a href="leistungen/sicherheitstechnik.html" class="leistung-karte reveal fade-up" data-duration="500" data-delay="320" data-threshold="0.15">
             <div class="karte-bild">
               <img src="images/sicherheitstechnik/einbruchmeldeanlage/einbruchmeldeanlage-bosch.jpg" alt="Sicherheitstechnik" loading="lazy">
               <div class="karte-overlay"></div>
@@ -114,7 +115,7 @@
           </a>
 
           <!-- 6 Außenbereich -->
-          <a href="leistungen/aussenbereich.html" class="leistung-karte">
+          <a href="leistungen/aussenbereich.html" class="leistung-karte reveal fade-up" data-duration="500" data-delay="400" data-threshold="0.15">
             <div class="karte-bild">
               <img src="images/aussenbereich_gartenbeleuchtung/gartenbeleuchtung/gartenbeleuchtung2.jpg" alt="Außenbereich" loading="lazy">
               <div class="karte-overlay"></div>
@@ -128,7 +129,7 @@
           </a>
 
           <!-- 7 Gewerbe -->
-          <a href="leistungen/gewerbe.html" class="leistung-karte">
+          <a href="leistungen/gewerbe.html" class="leistung-karte reveal fade-up" data-duration="500" data-delay="480" data-threshold="0.15">
             <div class="karte-bild">
               <img src="images/elektroinstallation-hero/neuinstallation3.jpg" alt="Gewerbe und Industrie" loading="lazy">
               <div class="karte-overlay"></div>
@@ -156,7 +157,7 @@
           </a>
 
           <!-- 9 Notdienst -->
-          <a href="leistungen/notdienst.html" class="leistung-karte leistung-karte--notdienst">
+          <a href="leistungen/notdienst.html" class="leistung-karte leistung-karte--notdienst reveal fade-up" data-duration="500" data-delay="560" data-threshold="0.15">
             <div class="karte-bild karte-bild--dunkel">
               <div class="karte-notdienst-inner">
                 <div class="karte-notdienst-blitz">&#9889;</div>
@@ -242,5 +243,6 @@
   </footer>
   <script>document.getElementById('footer-jahr').textContent=new Date().getFullYear();</script>
   <script src="js/nav.js"></script>
+  <script src="js/animate.js" defer></script>
 </body>
 </html>

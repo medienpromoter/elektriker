@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,10 +97,10 @@
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="reaktion-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/elektroinstallation-hero/neuinstallation2.jpg" alt="Elektriker im Einsatz" loading="lazy" width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Reparatur &amp; Fehlersuche</span>
             <h2 id="reaktion-titel" class="section-titel">Wir finden den Fehler – und beheben ihn</h2>
             <p>Beim Notdienst geht es um schnelle, sichere Fehlersuche und Behebung. Wir kommen mit dem richtigen Werkzeug und den gängigen Ersatzteilen – damit der Einsatz in einem Termin erledigt ist.</p>
@@ -139,5 +140,6 @@
   </footer>
   <script>document.getElementById('footer-jahr').textContent=new Date().getFullYear();</script>
   <script src="../js/nav.js"></script>
+  <script src="../js/animate.js" defer></script>
 </body>
 </html>

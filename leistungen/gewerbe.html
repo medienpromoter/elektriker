@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,7 @@
   <main>
 
     <section class="leistung-hero" style="background-image:linear-gradient(rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.48) 100%),url('../images/elektroinstallation-hero/neuinstallation3.jpg');background-size:cover;background-position:center;">
-      <div class="container">
+      <div class="container reveal fade-up distance-sm" data-duration="700" data-threshold="0.1">
         <span class="section-label">VDE 0100 &middot; DGUV V3 &middot; Termintreue &middot; [Stadt]</span>
         <h1>Elektrik für Gewerbe &amp; Industrie in [Stadt]</h1>
         <p>Neuinstallation, Schaltschrankbau, Notbeleuchtung, DGUV-V3-Prüfung – wir sind zuverlässiger Elektropartner für Gewerbebetriebe, Büros, Praxen und Industrie. Schnelle Reaktionszeit, saubere Dokumentation.</p>
@@ -73,10 +74,10 @@
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="dguv-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/elektroinstallation-hero/neuinstallation4.jpg" alt="DGUV V3 Prüfung elektrischer Betriebsmittel" loading="lazy" width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">DGUV V3 Prüfung</span>
             <h2 id="dguv-titel" class="section-titel">DGUV V3 – die gesetzliche Pflichtprüfung</h2>
             <p>Alle Unternehmen sind verpflichtet, elektrische Betriebsmittel und ortsfeste Anlagen regelmäßig zu prüfen. Ohne Prüfnachweis kann die Versicherung im Schadensfall leistungsfrei werden.</p>
@@ -96,7 +97,7 @@
     <section class="abschnitt" aria-labelledby="firmenparkplatz-titel">
       <div class="container">
         <div class="split split--reverse">
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Firmenparkplatz</span>
             <h2 id="firmenparkplatz-titel" class="section-titel">Ladepunkte für Firmenparkplätze</h2>
             <p>Von der Planung bis zur Inbetriebnahme – wir installieren skalierbare Ladeinfrastruktur für Unternehmensflotten und Mitarbeiterparkplätze mit Lastmanagement und Abrechnung.</p>
@@ -108,7 +109,7 @@
             </ul>
             <a href="emobilitaet.html" class="btn btn-outline-rot">Mehr zur Ladeinfrastruktur</a>
           </div>
-          <div class="split-bild" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
             <img src="../images/ladepunkt-firmenparkplaetze/ladepunkt-firmenparkplaetze-abl1.jpg" alt="ABL Ladepunkt Firmenparkplatz" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;">
             <img src="../images/ladepunkt-firmenparkplaetze/ladepunkt-firmenparkplaetze-mennekes2.jpg" alt="Mennekes Ladepunkt" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;">
             <img src="../images/ladepunkt-firmenparkplaetze/ladepunkt-firmenparkplaetze-keba.webp" alt="KEBA Ladestation" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;padding:0.5rem;border-radius:4px;">
@@ -123,7 +124,7 @@
         <div class="leistung-hinweis">
           <strong>Gewerbliche Kunden:</strong> Wir arbeiten termintreu und mit sauberer Dokumentation. Für Gewerbekunden bieten wir bevorzugte Reaktionszeiten und einen festen Ansprechpartner.
         </div>
-        <div class="leistung-cta">
+        <div class="leistung-cta reveal fade-up" data-duration="600" data-threshold="0.3">
           <h2 id="gewerbe-cta-titel">Gewerbeinstallation oder Prüfung anfragen</h2>
           <p>Für Unternehmen in [Stadt] und Umgebung – wir erstellen Angebote innerhalb von 48 Stunden.</p>
           <div class="btn-gruppe">
@@ -147,5 +148,6 @@
   </footer>
   <script>document.getElementById('footer-jahr').textContent=new Date().getFullYear();</script>
   <script src="../js/nav.js"></script>
+  <script src="../js/animate.js" defer></script>
 </body>
 </html>

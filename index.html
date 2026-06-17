@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +68,7 @@
     <!-- ============================================================
          TRUST BAR
          ============================================================ -->
-    <div class="trust-bar">
+    <div class="trust-bar reveal fade-in" data-duration="500" data-threshold="0.1">
       <div class="container">
         <ul class="trust-list">
           <li>
@@ -103,7 +104,7 @@
          ============================================================ -->
     <section class="abschnitt" aria-labelledby="leistungen-titel">
       <div class="container">
-        <span class="section-label">Was wir können</span>
+        <span class="section-label reveal fade-up distance-sm" data-duration="500" data-threshold="0.2">Was wir können</span>
         <h2 id="leistungen-titel" class="section-titel">Unsere Leistungen</h2>
         <p class="section-text" style="margin-bottom:2rem;">
           Als Meisterbetrieb in [Stadt] bieten wir das komplette Leistungsspektrum –
@@ -112,7 +113,7 @@
 
         <div class="leistungen-grid">
 
-          <a href="leistungen/elektroinstallation.html" class="leistung-kachel">
+          <a href="leistungen/elektroinstallation.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="0" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/sicherungskasten/sicherungskasten1.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -120,7 +121,7 @@
             <p>Neubau, Bestand,<br>Sicherungskasten</p>
           </a>
 
-          <a href="leistungen/photovoltaik.html" class="leistung-kachel">
+          <a href="leistungen/photovoltaik.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="80" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/photovoltaik/photovoltaik-hero.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -128,7 +129,7 @@
             <p>Solaranlage,<br>Batteriespeicher</p>
           </a>
 
-          <a href="leistungen/emobilitaet.html" class="leistung-kachel">
+          <a href="leistungen/emobilitaet.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="160" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/wallbox/wallbox-mennekes.png" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -136,7 +137,7 @@
             <p>E-Auto laden,<br>Zukunft erleben</p>
           </a>
 
-          <a href="leistungen/smarthome.html" class="leistung-kachel">
+          <a href="leistungen/smarthome.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="240" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/intelligente-lichtsteuerung/intelligente-lichtsteuerung-jung.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -144,7 +145,7 @@
             <p>KNX, Funk,<br>Gebäudeautomation</p>
           </a>
 
-          <a href="leistungen/sicherheitstechnik.html" class="leistung-kachel">
+          <a href="leistungen/sicherheitstechnik.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="320" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/sicherheitstechnik/einbruchmeldeanlage/einbruchmeldeanlage-bosch.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -152,7 +153,7 @@
             <p>EMA, Video,<br>Brandmeldeanlage</p>
           </a>
 
-          <a href="leistungen/aussenbereich.html" class="leistung-kachel">
+          <a href="leistungen/aussenbereich.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="400" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/aussenbereich_gartenbeleuchtung/gartenbeleuchtung/gartenbeleuchtung1.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -160,7 +161,7 @@
             <p>Gartenbeleuchtung,<br>Außensteckdosen</p>
           </a>
 
-          <a href="leistungen/gewerbe.html" class="leistung-kachel">
+          <a href="leistungen/gewerbe.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="480" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/ladepunkt-firmenparkplaetze/ladepunkt-firmenparkplaetze-mennekes.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -168,7 +169,7 @@
             <p>Installation,<br>DGUV V3 Prüfung</p>
           </a>
 
-          <a href="leistungen/notdienst.html" class="leistung-kachel">
+          <a href="leistungen/notdienst.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="560" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/elektroinstallation-hero/neuinstallation1.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -180,14 +181,14 @@
 
         <!-- Extra-Kacheln: zentriert unter dem Grid -->
         <div id="leistungen-extra-row" class="leistungen-extra-row">
-          <a href="leistungen/wartung-pruefung.html" class="leistung-kachel">
+          <a href="leistungen/wartung-pruefung.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="0" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/elektroinstallation-hero/neuinstallation5.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
             <h3>Wartung &amp; Prüfung</h3>
             <p>VDE, DGUV V3,<br>PV-Anlage</p>
           </a>
-          <a href="leistungen/beratung-foerderung.html" class="leistung-kachel">
+          <a href="leistungen/beratung-foerderung.html" class="leistung-kachel reveal fade-up" data-duration="500" data-delay="100" data-threshold="0.15">
             <div class="leistung-icon">
               <img src="images/kombination-pv-wallbox-speicher/kombination-pv-wallbox-speicher-fronius.jpg" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
             </div>
@@ -205,14 +206,14 @@
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="neubau-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img
               src="images/neubauinstallation/neuinstallation1.jpg"
               alt="Elektriker bei der Neuinstallation im Rohbau"
               loading="lazy"
               width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Elektroinstallation</span>
             <h2 id="neubau-titel" class="section-titel">Neubau &amp; Bestand – Elektrik die hält</h2>
             <p>
@@ -238,7 +239,7 @@
     <section class="abschnitt" aria-labelledby="pv-wallbox-titel">
       <div class="container">
         <div class="split split--reverse">
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Photovoltaik &amp; E-Mobilität</span>
             <h2 id="pv-wallbox-titel" class="section-titel">Sonne tanken – im Haus &amp; im Auto</h2>
             <p>
@@ -256,7 +257,7 @@
               <a href="leistungen/emobilitaet.html" class="btn btn-outline-rot">Wallbox anfragen</a>
             </div>
           </div>
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img
               src="images/kombination-pv-wallbox-speicher/kombination-pv-wallbox-speicher-fronius.jpg"
               alt="Kombination PV-Anlage, Wallbox und Batteriespeicher"
@@ -293,7 +294,7 @@
         <h2 id="zahlen-titel" class="section-titel section-titel--weiss" style="margin-bottom:2.5rem;">
           [Gründungsjahr] bis heute
         </h2>
-        <div class="stats-grid">
+        <div class="stats-grid reveal fade-up" data-duration="600" data-threshold="0.2">
           <div class="stat-item">
             <span class="stat-zahl">[X]+</span>
             <span class="stat-label">Jahre Erfahrung</span>
@@ -320,14 +321,14 @@
     <section class="abschnitt" aria-labelledby="smarthome-teaser-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img
               src="images/intelligente-lichtsteuerung/intelligente-lichtsteuerung-gira1.jpg"
               alt="Intelligente Lichtsteuerung – Smart Home"
               loading="lazy"
               width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Smart Home</span>
             <h2 id="smarthome-teaser-titel" class="section-titel">Ihr Zuhause. Intelligent gesteuert.</h2>
             <p>
@@ -541,5 +542,6 @@
 
   <script>document.getElementById('footer-jahr').textContent = new Date().getFullYear();</script>
   <script src="js/nav.js"></script>
+  <script src="js/animate.js" defer></script>
 </body>
 </html>

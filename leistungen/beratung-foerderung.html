@@ -1,11 +1,134 @@
-﻿<!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<script>document.documentElement.classList.replace("no-js","js-ready");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beratung & Förderung – [Firmenname] [Stadt]</title>
   <meta name="description" content="Fördermittelberatung für PV, Wallbox und Elektrik in [Stadt]: KfW 270, KfW 442, Nullsteuersatz. [Firmenname] begleitet Sie durch den Antragsprozess.">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Persönlicher Hero ── */
+    .beratung-hero {
+      background: #fff;
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid #e8e8e8;
+    }
+    .beratung-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .beratung-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .beratung-hero-text .section-label { margin-bottom: 0.75rem; display: block; }
+    .beratung-hero-text h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--dunkel);
+    }
+    .beratung-hero-text h1 em {
+      font-style: normal;
+      color: var(--rot);
+    }
+    .beratung-hero-text p {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+    .beratung-hero-text .btn-gruppe { flex-wrap: wrap; }
+
+    /* Persönliche Karte rechts */
+    .beratung-personen-karte {
+      background: var(--grau-hell);
+      border-radius: 8px;
+      padding: 2rem;
+      border-left: 4px solid var(--rot);
+      position: relative;
+    }
+    .beratung-personen-karte::before {
+      content: '\201C';
+      font-size: 5rem;
+      color: var(--rot);
+      opacity: 0.15;
+      position: absolute;
+      top: 0.25rem;
+      left: 1.25rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .beratung-personen-karte p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--dunkel);
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+    .beratung-personen-name {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .beratung-personen-avatar {
+      width: 44px;
+      height: 44px;
+      background: var(--rot);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .beratung-personen-info strong { display: block; font-size: 0.9rem; color: var(--dunkel); }
+    .beratung-personen-info span { font-size: 0.8rem; color: #888; }
+
+    /* Hinweis-Box */
+    .beratung-hinweis {
+      background: #fff8e1;
+      border: 1.5px solid #f0c040;
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+    }
+    .beratung-hinweis-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .beratung-hinweis p { margin: 0; font-size: 0.9rem; line-height: 1.6; color: #5a4a00; }
+    .beratung-hinweis strong { color: #3d3000; }
+
+    /* Förder-Karten */
+    .foerder-karte {
+      border-radius: 6px;
+      padding: 1.5rem;
+      background: #fff;
+      border: 1.5px solid #e0e0e0;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .foerder-karte:hover { border-color: var(--rot); box-shadow: 0 4px 16px rgba(204,0,0,0.08); }
+    .foerder-karte-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      margin-bottom: 0.75rem;
+    }
+    .foerder-karte-badge--rot { background: #fff0f0; color: var(--rot); }
+    .foerder-karte-badge--grau { background: #f0f0f0; color: #666; }
+    .foerder-karte h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .foerder-karte p { font-size: 0.875rem; color: var(--grau-mid); line-height: 1.6; margin-bottom: 0.75rem; }
+    .foerder-karte-fuer { font-size: 0.8rem; font-weight: 600; color: var(--dunkel); border-top: 1px solid #eee; padding-top: 0.75rem; }
+  </style>
 </head>
 <body data-seite="leistungen">
 
@@ -19,28 +142,60 @@
     <nav class="mobile-menu" id="mobile-menu"></nav>
   </header>
 
-  
-
   <main>
 
-    <section class="leistung-hero" style="background-image:linear-gradient(rgba(0,0,0,0.70) 0%,rgba(0,0,0,0.45) 100%),url('../images/kombination-pv-wallbox-speicher/kombination-pv-wallbox-speicher-huawei2.jpg');background-size:cover;background-position:center;">
+    <!-- PERSÖNLICHER HERO -->
+    <section class="beratung-hero">
       <div class="container">
-        <span class="section-label">KfW 270 &middot; KfW 442 &middot; 0% MwSt. &middot; [Stadt]</span>
-        <h1>Beratung &amp; Förderung in [Stadt]</h1>
-        <p>Wir klären, welche Fördermittel für Ihr Vorhaben passen – und begleiten Sie durch den Antragsprozess. Wichtig: Der Antrag muss VOR Auftragsvergabe gestellt werden. Wer das nicht weiß, verliert Geld.</p>
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="../kontakt.html" class="btn btn-primary">Kostenlosen Beratungstermin anfragen</a>
-          <a href="tel:[Telefonnummer]" class="btn btn-outline">&#128222; [Telefonnummer]</a>
+        <div class="beratung-hero-inner">
+
+          <div class="beratung-hero-text reveal fade-up distance-sm" data-duration="700" data-threshold="0.1">
+            <span class="section-label">Ehrlich. Unkompliziert. [Stadt].</span>
+            <h1>Förderung beantragen –<br>ohne <em>Förderdschungel.</em></h1>
+            <p>
+              Es gibt viel Geld da draußen – KfW, Landes­förderung, Nullsteuersatz.
+              Das Problem: Die meisten wissen nicht, was für sie passt. Oder sie beantragen
+              es zu spät. Wir erklären Ihnen das in einem kurzen Gespräch, kostenlos und
+              ohne Wenn und Aber.
+            </p>
+            <div class="btn-gruppe">
+              <a href="../kontakt.html" class="btn btn-primary">Beratungstermin anfragen</a>
+              <a href="tel:[Telefonnummer]" class="btn btn-outline-rot">&#128222; [Telefonnummer]</a>
+            </div>
+          </div>
+
+          <div class="beratung-personen-karte reveal fade-up" data-duration="700" data-delay="150" data-threshold="0.1">
+            <p>
+              „Wir erleben es regelmäßig: Jemand hat eine PV-Anlage
+              beauftragt – und fragt erst danach nach Förderung. Das
+              ist dann leider zu spät. Deshalb sprechen wir das
+              immer zuerst an, bevor auch nur ein Angebot geschrieben
+              wird."
+            </p>
+            <div class="beratung-personen-name">
+              <div class="beratung-personen-avatar">M</div>
+              <div class="beratung-personen-info">
+                <strong>[Meister-Vorname] [Nachname]</strong>
+                <span>Meister &middot; [Firmenname]</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Wichtiger Hinweis oben -->
-    <div style="background:#fff3cd;border-bottom:1px solid #e0c84a;padding:1.25rem 0;">
-      <div class="container" style="display:flex;align-items:flex-start;gap:0.75rem;">
-        <span style="font-size:1.5rem;flex-shrink:0;">&#9888;</span>
-        <div>
-          <strong>Förderantrag ZUERST – dann beauftragen:</strong> Viele Förderprogramme setzen voraus, dass der Antrag VOR der Auftragsvergabe gestellt wird. Rückwirkend ist eine Förderung in der Regel nicht möglich. Wir erklären Ihnen den Ablauf – kostenlos und unverbindlich.
+    <!-- Wichtiger Hinweis -->
+    <div class="abschnitt" style="padding-top:2rem;padding-bottom:0;">
+      <div class="container">
+        <div class="beratung-hinweis reveal fade-in" data-duration="400" data-threshold="0.2">
+          <div class="beratung-hinweis-icon">&#9888;&#65039;</div>
+          <p>
+            <strong>Förderantrag immer zuerst – dann beauftragen:</strong>
+            Die meisten Förderprogramme setzen voraus, dass der Antrag VOR der Auftrags­vergabe gestellt wird.
+            Rückwirkend ist eine Förderung in der Regel nicht möglich. Wir erklären Ihnen den Ablauf –
+            kostenlos und unverbindlich.
+          </p>
         </div>
       </div>
     </div>
@@ -48,69 +203,73 @@
     <!-- Förder-Programme -->
     <section class="abschnitt" aria-labelledby="foerderprogramme-titel">
       <div class="container">
-        <span class="section-label">Aktuelle Programme</span>
+        <span class="section-label reveal fade-up distance-sm" data-duration="500" data-threshold="0.2">Was gibt es aktuell</span>
         <h2 id="foerderprogramme-titel" class="section-titel">Förderung im Überblick</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:1.75rem;">
+        <p style="max-width:600px;color:var(--grau-mid);margin-bottom:2rem;">
+          Die Programme ändern sich regelmäßig. Was wir hier zeigen, gilt Stand heute –
+          wir prüfen für Ihr konkretes Vorhaben, was passt.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
 
-          <div style="border:2px solid var(--rot);border-radius:4px;padding:1.5rem;">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--rot);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">KfW 270</div>
-            <h3 style="font-size:1.1rem;margin-bottom:0.75rem;">Erneuerbare Energien Standard</h3>
-            <p style="font-size:0.88rem;color:var(--grau-mid);margin-bottom:0.75rem;">Zinsgünstiger Kredit für PV-Anlagen und Batteriespeicher. Günstige Konditionen, lange Laufzeiten.</p>
-            <p style="font-size:0.82rem;font-weight:600;color:var(--dunkel);">Für: PV-Anlage + Speicher</p>
+          <div class="foerder-karte reveal fade-up" data-duration="500" data-delay="0" data-threshold="0.15">
+            <div class="foerder-karte-badge foerder-karte-badge--rot">KfW 270</div>
+            <h3>Erneuerbare Energien Standard</h3>
+            <p>Zinsgünstiger Kredit für PV-Anlagen und Batteriespeicher. Günstige Konditionen, lange Laufzeiten.</p>
+            <div class="foerder-karte-fuer">Für: PV-Anlage + Speicher</div>
           </div>
 
-          <div style="border:2px solid var(--rot);border-radius:4px;padding:1.5rem;">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--rot);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">KfW 442</div>
-            <h3 style="font-size:1.1rem;margin-bottom:0.75rem;">Solarstrom für Elektroautos</h3>
-            <p style="font-size:0.88rem;color:var(--grau-mid);margin-bottom:0.75rem;">Investitionszuschuss für die Kombination PV-Anlage, Wallbox und Batteriespeicher.</p>
-            <p style="font-size:0.82rem;font-weight:600;color:var(--dunkel);">Für: PV + Wallbox + Speicher</p>
+          <div class="foerder-karte reveal fade-up" data-duration="500" data-delay="80" data-threshold="0.15">
+            <div class="foerder-karte-badge foerder-karte-badge--rot">KfW 442</div>
+            <h3>Solarstrom für Elektroautos</h3>
+            <p>Investitionszuschuss für die Kombination PV-Anlage, Wallbox und Batteriespeicher.</p>
+            <div class="foerder-karte-fuer">Für: PV + Wallbox + Speicher</div>
           </div>
 
-          <div style="border:2px solid var(--rot);border-radius:4px;padding:1.5rem;">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--rot);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Steuer</div>
-            <h3 style="font-size:1.1rem;margin-bottom:0.75rem;">0% Mehrwertsteuer auf PV</h3>
-            <p style="font-size:0.88rem;color:var(--grau-mid);margin-bottom:0.75rem;">Seit Januar 2023 gilt der Nullsteuersatz auf Kauf und Installation von PV-Anlagen auf Wohngebäuden.</p>
-            <p style="font-size:0.82rem;font-weight:600;color:var(--dunkel);">Für: PV-Anlage auf Wohngebäude</p>
+          <div class="foerder-karte reveal fade-up" data-duration="500" data-delay="160" data-threshold="0.15">
+            <div class="foerder-karte-badge foerder-karte-badge--rot">0% MwSt.</div>
+            <h3>Nullsteuersatz auf PV</h3>
+            <p>Seit Januar 2023 gilt der Nullsteuersatz auf Kauf und Installation von PV-Anlagen auf Wohngebäuden.</p>
+            <div class="foerder-karte-fuer">Für: PV-Anlage auf Wohngebäude</div>
           </div>
 
-          <div style="border:2px solid #ccc;border-radius:4px;padding:1.5rem;">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--grau-mid);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Regional</div>
-            <h3 style="font-size:1.1rem;margin-bottom:0.75rem;">Landes- &amp; Kommunalprogramme</h3>
-            <p style="font-size:0.88rem;color:var(--grau-mid);margin-bottom:0.75rem;">Je nach Bundesland und Kommune gibt es zusätzliche Zuschüsse. Wir prüfen individuell für Ihren Standort.</p>
-            <p style="font-size:0.82rem;font-weight:600;color:var(--dunkel);">Für: verschiedene Vorhaben</p>
+          <div class="foerder-karte reveal fade-up" data-duration="500" data-delay="240" data-threshold="0.15">
+            <div class="foerder-karte-badge foerder-karte-badge--grau">Regional</div>
+            <h3>Landes- &amp; Kommunalprogramme</h3>
+            <p>Je nach Bundesland und Kommune gibt es zusätzliche Zuschüsse. Wir prüfen individuell für Ihren Standort.</p>
+            <div class="foerder-karte-fuer">Für: verschiedene Vorhaben</div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- SPLIT: Ablauf Beratung -->
+    <!-- SPLIT: Ablauf -->
     <section class="abschnitt" style="background:var(--grau-hell);" aria-labelledby="ablauf-beratung-titel">
       <div class="container">
         <div class="split">
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/photovoltaik/photovoltaik-hero2.jpg" alt="Beratung zur PV-Anlage und Förderung" loading="lazy" width="600" height="450">
           </div>
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">So läuft es ab</span>
-            <h2 id="ablauf-beratung-titel" class="section-titel">Beratung, Förderantrag, Installation</h2>
-            <p>Wir begleiten Sie vom ersten Gespräch bis zur fertigen Anlage – inklusive Förderantrag, der VOR Auftragserteilung gestellt wird.</p>
-            <ol style="list-style:none;counter-reset:schritte;margin-top:1rem;">
-              <li style="counter-increment:schritte;padding:0.75rem 0 0.75rem 3rem;position:relative;border-bottom:1px solid #e0e0e0;font-size:0.95rem;">
-                <span style="position:absolute;left:0;top:0.75rem;width:2rem;height:2rem;background:var(--rot);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;">1</span>
-                <strong>Kostenloses Erstgespräch</strong> – Ihr Vorhaben, Ihre Fragen, erste Einschätzung
+            <h2 id="ablauf-beratung-titel" class="section-titel">Vom Gespräch zur fertigen Anlage</h2>
+            <p>Kein Papierstapel, keine Formularhölle. Wir machen das gemeinsam – Schritt für Schritt.</p>
+            <ol style="list-style:none;margin-top:1.25rem;">
+              <li style="padding:0.85rem 0 0.85rem 3rem;position:relative;border-bottom:1px solid #e0e0e0;font-size:0.95rem;">
+                <span style="position:absolute;left:0;top:0.85rem;width:2rem;height:2rem;background:var(--rot);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;">1</span>
+                <strong>Kurzes Erstgespräch</strong><br><span style="color:#888;font-size:0.875rem;">Ihr Vorhaben, Ihre Situation – wir hören zu</span>
               </li>
-              <li style="counter-increment:schritte;padding:0.75rem 0 0.75rem 3rem;position:relative;border-bottom:1px solid #e0e0e0;font-size:0.95rem;">
-                <span style="position:absolute;left:0;top:0.75rem;width:2rem;height:2rem;background:var(--rot);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;">2</span>
-                <strong>Fördercheck</strong> – welche Programme passen, wie viel ist realistisch
+              <li style="padding:0.85rem 0 0.85rem 3rem;position:relative;border-bottom:1px solid #e0e0e0;font-size:0.95rem;">
+                <span style="position:absolute;left:0;top:0.85rem;width:2rem;height:2rem;background:var(--rot);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;">2</span>
+                <strong>Ehrlicher Fördercheck</strong><br><span style="color:#888;font-size:0.875rem;">Was passt wirklich, was lohnt sich nicht</span>
               </li>
-              <li style="counter-increment:schritte;padding:0.75rem 0 0.75rem 3rem;position:relative;border-bottom:1px solid #e0e0e0;font-size:0.95rem;">
-                <span style="position:absolute;left:0;top:0.75rem;width:2rem;height:2rem;background:var(--rot);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;">3</span>
-                <strong>Antragstellung</strong> – VOR Auftragserteilung, wir begleiten Sie
+              <li style="padding:0.85rem 0 0.85rem 3rem;position:relative;border-bottom:1px solid #e0e0e0;font-size:0.95rem;">
+                <span style="position:absolute;left:0;top:0.85rem;width:2rem;height:2rem;background:var(--rot);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;">3</span>
+                <strong>Antragstellung – wir übernehmen das</strong><br><span style="color:#888;font-size:0.875rem;">VOR dem Auftrag, das ist wichtig</span>
               </li>
-              <li style="counter-increment:schritte;padding:0.75rem 0 0 3rem;position:relative;font-size:0.95rem;">
-                <span style="position:absolute;left:0;top:0.75rem;width:2rem;height:2rem;background:var(--rot);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;">4</span>
-                <strong>Auftrag und Installation</strong> – erst jetzt wird beauftragt und gebaut
+              <li style="padding:0.85rem 0 0 3rem;position:relative;font-size:0.95rem;">
+                <span style="position:absolute;left:0;top:0.85rem;width:2rem;height:2rem;background:var(--rot);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;">4</span>
+                <strong>Erst jetzt: Auftrag und Installation</strong><br><span style="color:#888;font-size:0.875rem;">Sauber dokumentiert, normgerecht</span>
               </li>
             </ol>
           </div>
@@ -122,33 +281,38 @@
     <section class="abschnitt" aria-labelledby="energieberatung-titel">
       <div class="container">
         <div class="split split--reverse">
-          <div class="split-text">
+          <div class="split-text reveal fade-right" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <span class="section-label">Energieberatung</span>
-            <h2 id="energieberatung-titel" class="section-titel">Einsparpotenziale erkennen</h2>
-            <p>Wir analysieren Ihre bestehende Elektrik: Was ist veraltet, was ist sicherheitsrelevant, wo liegen Einsparpotenziale durch LED-Umrüstung, smarte Steuerung oder eine PV-Anlage?</p>
+            <h2 id="energieberatung-titel" class="section-titel">Wir sagen Ihnen, wo Geld liegenbleibt</h2>
+            <p>Alte Elektrik, zu viel Standby-Verbrauch, Beleuchtung die noch aus den 90ern ist – wir schauen uns das ehrlich an und sagen Ihnen, was sich wirklich lohnt und was nicht.</p>
             <ul class="check-liste">
               <li>Zustandsprüfung der Elektrik vor Ort</li>
-              <li>LED-Umrüstung: Einsparpotenzial berechnen</li>
-              <li>Smarte Steuerung: Komfort und Effizienz</li>
-              <li>PV-Anlage: wann lohnt sie sich für Sie?</li>
+              <li>LED-Umrüstung: reales Einsparpotenzial berechnen</li>
+              <li>Smarte Steuerung: wo bringt sie wirklich was</li>
+              <li>PV-Anlage: ehrliche Amortisationsrechnung</li>
             </ul>
             <a href="../kontakt.html" class="btn btn-primary">Beratungstermin vereinbaren</a>
           </div>
-          <div class="split-bild">
+          <div class="split-bild reveal fade-left" data-duration="700" data-easing="ease-out" data-threshold="0.2">
             <img src="../images/photovoltaik/photovoltaik-hero5.jpg" alt="Energieberatung – Solardach und Elektrik" loading="lazy" width="600" height="450">
           </div>
         </div>
       </div>
     </section>
 
-    <section class="abschnitt" aria-labelledby="foerderung-cta-titel">
-      <div class="container">
-        <div class="leistung-cta">
-          <h2 id="foerderung-cta-titel">Kostenlosen Beratungstermin vereinbaren</h2>
-          <p>Individuelle Beratung vor Ort oder im Betrieb – kostenlos und ohne Verpflichtung.<br>Wir prüfen, was für Sie möglich ist.</p>
-          <div class="btn-gruppe">
-            <a href="../kontakt.html" class="btn btn-primary">Jetzt Termin vereinbaren</a>
-            <a href="tel:[Telefonnummer]" class="btn btn-outline-rot">&#128222; [Telefonnummer]</a>
+    <!-- CTA -->
+    <section class="abschnitt" style="background:var(--dunkel);" aria-labelledby="foerderung-cta-titel">
+      <div class="container" style="text-align:center;">
+        <div class="reveal fade-up" data-duration="600" data-threshold="0.2">
+          <span class="section-label" style="color:rgba(255,255,255,0.5);">Kein Risiko, kein Auftrag nötig</span>
+          <h2 id="foerderung-cta-titel" style="color:#fff;margin-bottom:0.75rem;">Einfach mal anrufen oder schreiben.</h2>
+          <p style="color:rgba(255,255,255,0.65);max-width:540px;margin:0 auto 2rem;font-size:1rem;">
+            Wir schauen uns Ihre Situation an – kostenlos und unverbindlich.
+            Kein Verkaufsgespräch, kein Druck.
+          </p>
+          <div class="btn-gruppe" style="justify-content:center;">
+            <a href="../kontakt.html" class="btn btn-primary">Jetzt Termin anfragen</a>
+            <a href="tel:[Telefonnummer]" class="btn btn-outline">&#128222; [Telefonnummer]</a>
           </div>
         </div>
       </div>
@@ -167,5 +331,6 @@
   </footer>
   <script>document.getElementById('footer-jahr').textContent=new Date().getFullYear();</script>
   <script src="../js/nav.js"></script>
+  <script src="../js/animate.js" defer></script>
 </body>
 </html>
