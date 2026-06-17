@@ -454,9 +454,26 @@ a   { color: inherit; text-decoration: none; }
   line-height: 1.4;
 }
 
-/* Kacheln die initial versteckt sind (Index-Expand) */
-.leistung-extra { display: none; }
-.leistung-extra.sichtbar { display: block; }
+/* Extra-Reihe zentriert unter dem Grid */
+.leistungen-extra-row {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #e0e0e0;
+}
+.leistungen-extra-row .leistung-kachel {
+  width: 25%;
+  border-right: 1px solid #e0e0e0;
+}
+.leistungen-extra-row .leistung-kachel:last-child {
+  border-right: none;
+}
+@media (max-width: 767px) {
+  .leistungen-extra-row { flex-direction: column; }
+  .leistungen-extra-row .leistung-kachel { width: 100%; border-right: none; border-bottom: 1px solid #e0e0e0; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .leistungen-extra-row .leistung-kachel { width: 33.333%; }
+}
 
 /* ============================================================
    LEISTUNGEN-ÜBERSICHT KARTEN (leistungen.html)
