@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – [Firmenname] Elektriker [Stadt]</title>
+  <meta name="description" content="Kontakt aufnehmen mit [Firmenname] in [Stadt]: Formular für Anfragen, direkte Rufnummer für Notfälle, Öffnungszeiten und Anfahrt.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-seite="kontakt">
+
+  <header>
+    <a href="index.html"><img src="images/logo.png" alt="[Firmenname] Logo" width="200"></a>
+    <p>Tel.: <a href="tel:[Telefonnummer]">[Telefonnummer]</a></p>
+    <div id="nav-placeholder"></div>
+  </header>
+
+  <main>
+    <h1>Kontakt &amp; Anfrage</h1>
+
+    <section aria-labelledby="notfall-titel">
+      <h2 id="notfall-titel">Notfall oder dringende Anfrage?</h2>
+      <p>Bei Stromausfall, Kurzschluss oder Brandgeruch bitte sofort anrufen – nicht das Formular nutzen.</p>
+      <p><a href="tel:[Telefonnummer]">[Telefonnummer]</a> – 24/7 erreichbar</p>
+    </section>
+
+    <section aria-labelledby="formular-titel">
+      <h2 id="formular-titel">Anfrage für geplante Projekte</h2>
+      <p>Füllen Sie das Formular aus – wir melden uns innerhalb eines Werktags.</p>
+
+      <form action="#" method="post" novalidate>
+        <div>
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div>
+          <label for="telefon">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+        </div>
+
+        <div>
+          <label for="email">E-Mail <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div>
+          <label for="leistung">Gewünschte Leistung</label>
+          <select id="leistung" name="leistung">
+            <option value="">Bitte wählen …</option>
+            <option value="elektroinstallation">Elektroinstallation</option>
+            <option value="photovoltaik">Photovoltaik &amp; Energiespeicher</option>
+            <option value="emobilitaet">E-Mobilität &amp; Wallbox</option>
+            <option value="smarthome">Smart Home</option>
+            <option value="sicherheitstechnik">Sicherheitstechnik</option>
+            <option value="aussenbereich">Außenbereich &amp; Gartenbeleuchtung</option>
+            <option value="gewerbe">Gewerbe &amp; Industrie</option>
+            <option value="wartung">Wartung &amp; Prüfung</option>
+            <option value="reparatur">Reparatur</option>
+            <option value="beratung">Beratung &amp; Förderung</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="nachricht">Nachricht <span aria-hidden="true">*</span></label>
+          <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
+        </div>
+
+        <div>
+          <input type="checkbox" id="datenschutz" name="datenschutz" required>
+          <label for="datenschutz">
+            Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme
+            der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. <span aria-hidden="true">*</span>
+          </label>
+        </div>
+
+        <button type="submit">Anfrage absenden</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="adresse-titel">
+      <h2 id="adresse-titel">Adresse &amp; Öffnungszeiten</h2>
+      <address>
+        [Firmenname]<br>
+        [Straße] [Nr.]<br>
+        [PLZ] [Stadt]
+      </address>
+      <p>
+        Öffnungszeiten: Mo–Fr 7:00–17:00 Uhr<br>
+        Notdienst: 24/7 unter <a href="tel:[Telefonnummer]">[Telefonnummer]</a>
+      </p>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="content/content.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

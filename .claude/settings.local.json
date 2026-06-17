@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\denni\\\\Desktop\\\\Claude Code\\\\elektriker_website\\\\images\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\denni\\\\Desktop\\\\Claude Code\\\\elektriker_website\\\\images\" -Recurse -File | ForEach-Object { \"$\\($_.DirectoryName.Replace\\('C:\\\\Users\\\\denni\\\\Desktop\\\\Claude Code\\\\elektriker_website\\\\images\\\\',''\\)\\)\\\\$\\($_.Name\\)\" } | Sort-Object)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where node *)",
+      "Bash(where python *)"
+    ]
+  }
+}

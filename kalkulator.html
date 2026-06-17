@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angebotsrechner – [Firmenname] Elektriker [Stadt]</title>
+  <meta name="description" content="Grobe Kostenschätzung für Elektroarbeiten, PV-Anlagen und Wallboxen – unverbindlicher Angebotsrechner von [Firmenname] in [Stadt].">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-seite="kalkulator">
+
+  <header>
+    <a href="index.html"><img src="images/logo.png" alt="[Firmenname] Logo" width="200"></a>
+    <p>Tel.: <a href="tel:[Telefonnummer]">[Telefonnummer]</a></p>
+    <div id="nav-placeholder"></div>
+  </header>
+
+  <main>
+    <h1>Angebotsrechner</h1>
+    <p>
+      Erhalten Sie eine erste grobe Kostenschätzung für Ihr Vorhaben. Der Rechner ersetzt
+      kein Angebot – für eine verbindliche Kalkulation kommen wir kostenlos zu Ihnen.
+    </p>
+
+    <form id="kalkulator-form" novalidate>
+
+      <fieldset>
+        <legend>1. Was planen Sie?</legend>
+        <label>
+          <input type="radio" name="leistung" value="wallbox"> Wallbox / Ladestation
+        </label>
+        <label>
+          <input type="radio" name="leistung" value="pv"> PV-Anlage
+        </label>
+        <label>
+          <input type="radio" name="leistung" value="sicherungskasten"> Sicherungskasten erneuern
+        </label>
+        <label>
+          <input type="radio" name="leistung" value="installation"> Elektroinstallation (Neubau/Sanierung)
+        </label>
+        <label>
+          <input type="radio" name="leistung" value="smarthome"> Smart Home
+        </label>
+      </fieldset>
+
+      <fieldset id="wallbox-optionen" hidden>
+        <legend>Wallbox – Details</legend>
+        <label for="wallbox-leistung">Ladeleistung</label>
+        <select id="wallbox-leistung" name="wallbox-leistung">
+          <option value="3.7">3,7 kW (einphasig)</option>
+          <option value="11" selected>11 kW (dreiphasig)</option>
+          <option value="22">22 kW (dreiphasig)</option>
+        </select>
+        <label for="wallbox-kabelweg">Kabelweg (Meter)</label>
+        <input type="number" id="wallbox-kabelweg" name="wallbox-kabelweg" min="1" max="100" value="10">
+      </fieldset>
+
+      <fieldset id="pv-optionen" hidden>
+        <legend>PV-Anlage – Details</legend>
+        <label for="pv-kwp">Anlagengröße (kWp)</label>
+        <input type="number" id="pv-kwp" name="pv-kwp" min="1" max="100" value="10">
+        <label>
+          <input type="checkbox" name="pv-speicher"> Mit Batteriespeicher
+        </label>
+      </fieldset>
+
+      <button type="submit">Schätzung berechnen</button>
+    </form>
+
+    <section id="ergebnis" hidden aria-live="polite">
+      <h2>Ihre grobe Kostenschätzung</h2>
+      <p id="ergebnis-text"></p>
+      <p>
+        <strong>Hinweis:</strong> Diese Schätzung ist unverbindlich und ohne Gewähr.
+        Für ein verbindliches Angebot kommen wir kostenlos zu Ihnen.
+      </p>
+      <a href="kontakt.html">Jetzt verbindliches Angebot anfragen</a>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="content/content.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const form = document.getElementById("kalkulator-form");
+    const ergebnis = document.getElementById("ergebnis");
+    const ergebnisText = document.getElementById("ergebnis-text");
+
+    // Optionen ein-/ausblenden
+    form.querySelectorAll('input[name="leistung"]').forEach((radio) => {
+      radio.addEventListener("change", function () {
+        document.getElementById("wallbox-optionen").hidden = this.value !== "wallbox";
+        document.getElementById("pv-optionen").hidden = this.value !== "pv";
+      });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const leistung = form.querySelector('input[name="leistung"]:checked');
+      if (!leistung) {
+        alert("Bitte wählen Sie eine Leistung aus.");
+        return;
+      }
+
+      let text = "";
+      switch (leistung.value) {
+        case "wallbox": {
+          const kw = parseFloat(document.getElementById("wallbox-leistung").value);
+          const meter = parseInt(document.getElementById("wallbox-kabelweg").value, 10) || 10;
+          const basis = kw <= 3.7 ? 800 : kw <= 11 ? 1200 : 1800;
+          const kabel = meter * 15;
+          const gesamt = basis + kabel;
+          text = `Wallbox ${kw} kW inkl. ca. ${meter} m Kabelweg: ca. ${gesamt.toLocaleString("de-DE")} € brutto (inkl. Material und Montage).`;
+          break;
+        }
+        case "pv": {
+          const kwp = parseInt(document.getElementById("pv-kwp").value, 10) || 10;
+          const speicher = form.querySelector('input[name="pv-speicher"]').checked;
+          const preisPro = 1200;
+          let gesamt = kwp * preisPro;
+          if (speicher) gesamt += kwp * 400;
+          text = `PV-Anlage ${kwp} kWp${speicher ? " mit Speicher" : ""}: ca. ${gesamt.toLocaleString("de-DE")} € (inkl. Installation, ohne MwSt. – 0 % MwSt. für Wohngebäude).`;
+          break;
+        }
+        case "sicherungskasten":
+          text = "Sicherungskasten erneuern: ca. 800–1.500 € je nach Größe und Aufwand.";
+          break;
+        case "installation":
+          text = "Elektroinstallation Neubau/Sanierung: Pauschalpreise sind hier nicht seriös möglich – wir erstellen Ihnen ein kostenloses Angebot nach Besichtigung.";
+          break;
+        case "smarthome":
+          text = "Smart Home Einstiegspaket (ein Raum): ab ca. 500 €. Vollinstallation KNX: ab ca. 5.000 € je nach Umfang.";
+          break;
+      }
+
+      ergebnisText.textContent = text;
+      ergebnis.hidden = false;
+      ergebnis.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

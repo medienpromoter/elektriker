@@ -1,0 +1,30 @@
+name: Leistungsseiten generieren
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/content.js"
+      - "scripts/generate.js"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Leistungsseiten generieren
+        run: node scripts/generate.js
+
+      - name: Änderungen committen
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add leistungen/
+          git diff --staged --quiet || git commit -m "chore: Leistungsseiten aus content.js generiert"
+          git push

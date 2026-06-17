@@ -1,0 +1,41 @@
+# [Firmenname] – Elektriker in [Stadt]
+
+## Über uns
+[Firmenname] ist ein konzessionierter Elektrobetrieb (Meisterbetrieb, VDE-Mitglied,
+Innungsbetrieb) mit Sitz in [Stadt]. Gegründet [Gründungsjahr], tätig für Privat-
+und Gewerbekunden in [Stadt] und Umgebung.
+
+## Leistungen
+- Elektroinstallation (Neubau, Bestand, Sicherungskasten, Steckdosen)
+- Photovoltaik und Batteriespeicher (Planung, Installation, Netzanmeldung, Förderung)
+- E-Mobilität und Wallbox (Einfamilienhaus, MFH, Gewerbeflotte)
+- Smart Home und Gebäudeautomation (KNX, Funk, Licht, Rollladen)
+- Sicherheitstechnik (EMA, Videoüberwachung, BMA, Zutrittskontrolle)
+- Außenbereich und Gartenbeleuchtung
+- Gewerbe und Industrie (Schaltschrankbau, DGUV V3 Prüfung)
+- Wartung und Prüfung (VDE 0105, DGUV V3, PV-Anlage, Rauchwarnmelder)
+- Reparatur und Notdienst 24/7
+- Beratung und Förderung (KfW 270, KfW 442, Nullsteuersatz PV)
+
+## Kontakt
+Telefon: [Telefonnummer]
+E-Mail: [E-Mail]
+Adresse: [Straße] [Nr.], [PLZ] [Stadt]
+
+## Sitemap
+- /index.html – Startseite
+- /leistungen.html – Leistungsübersicht
+- /leistungen/elektroinstallation.html
+- /leistungen/photovoltaik.html
+- /leistungen/emobilitaet.html
+- /leistungen/smarthome.html
+- /leistungen/sicherheitstechnik.html
+- /leistungen/aussenbereich.html
+- /leistungen/gewerbe.html
+- /leistungen/wartung-pruefung.html
+- /leistungen/notdienst.html
+- /leistungen/beratung-foerderung.html
+- /kontakt.html
+- /kalkulator.html
+- /impressum.html
+- /datenschutz.html
